@@ -1,6 +1,7 @@
 extends KinematicBody2D
 var objeto = Vector2()
 const GRAVIDADE = 5
+var initialPositionYObjeto = global_position.y - 600
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,5 +13,5 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if(body.name == 'player'):
-		print('player')
+		global_position.y = initialPositionYObjeto
 		body.returnPositionInitial()

@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="HUD" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pontuacao" type="Label" parent="CanvasLayer"]
+margin_left = 919.56
+margin_top = 5.30005
+margin_right = 959.56
+margin_bottom = 36.3
+text = "000
+"
+
+[node name="vidas" type="Label" parent="CanvasLayer"]
+margin_left = 35.1282
+margin_top = 741.892
+margin_right = 75.1282
+margin_bottom = 772.892
+text = "3
+"

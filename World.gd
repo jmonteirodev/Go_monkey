@@ -10,10 +10,14 @@ func _ready():
 
 func _physics_process(delta):
 	contadorObjetos += 1
-	lancarObjeto()
+	if($player != null):
+		$HUD/CanvasLayer/pontuacao.text = str($player.pontuacao)
+		$HUD/CanvasLayer/vidas.text = str($player.vidas)
+	if(contadorObjetos == 600):
+		lancarObjeto()
 	
 func lancarObjeto():
-	if(contadorObjetos == 600):
+	if($player != null):
 		$Objetos/Objeto.global_position.x = $player.global_position.x
 		$Objetos/Objeto.global_position.y = initialPositionYObjeto
 		contadorObjetos = 0

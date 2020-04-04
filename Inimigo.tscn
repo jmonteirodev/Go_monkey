@@ -4,15 +4,17 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.6676, 14.9532 )
+extents = Vector2( 15.6676, 19.6635 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 39.3113, 12.6161 )
 
-[node name="Inimigo" type="KinematicBody2D"]
+[node name="Inimigo" type="KinematicBody2D" groups=[
+"Inimigo",
+]]
 position = Vector2( 545.014, 158.61 )
 scale = Vector2( 0.470441, 0.446515 )
-collision_layer = 3
+collision_layer = 0
 collision_mask = 3
 script = ExtResource( 1 )
 

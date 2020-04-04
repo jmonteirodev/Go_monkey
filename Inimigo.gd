@@ -3,15 +3,18 @@ var body = Vector2()
 const CHAO = Vector2(0,1)
 const GRAVIDADE = 30
 var contador = 0
-var direcao = 1
+var numero_aleatorio = randi()%2-1
+var direcao = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if(numero_aleatorio == 0): 
+		direcao = 1
+	else:
+		direcao = numero_aleatorio
 
 
 func _physics_process(delta):
 	body.y += GRAVIDADE
-	
 	body.x = direcao*100
 	if(contador == 300):
 		direcao = -1
