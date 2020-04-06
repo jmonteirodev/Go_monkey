@@ -29,7 +29,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -64.5056 )
+position = Vector2( 0, -113.892 )
 current = true
 
 [node name="identificaTeto" type="RayCast2D" parent="."]

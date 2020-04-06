@@ -49,6 +49,7 @@ func _physics_process(delta):
 func returnPositionInitial():
 	global_position = initialPosition
 	vidas = vidas-1
+	
 	if(vidas < 1):
 		print("Derrota")
 		queue_free()
