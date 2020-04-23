@@ -1,15 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://squish/andar/1.png" type="Texture" id=2]
+[ext_resource path="res://squish/andar/2.png" type="Texture" id=3]
+[ext_resource path="res://squish/andar/3.png" type="Texture" id=4]
+[ext_resource path="res://squish/andar/4.png" type="Texture" id=5]
+[ext_resource path="res://squish/andar/5.png" type="Texture" id=6]
+[ext_resource path="res://squish/andar/6.png" type="Texture" id=7]
+[ext_resource path="res://squish/andar/7.png" type="Texture" id=8]
+[ext_resource path="res://squish/andar/8.png" type="Texture" id=9]
+[ext_resource path="res://squish/andar/9.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.21492, 32 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "parado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "andar",
+"speed": 12.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 23.7811, 38.9815 )
+extents = Vector2( 2.31079, 32 )
 
-[sub_resource type="RayShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.77611, 38.9815 )
+
+[sub_resource type="RayShape2D" id=4]
 length = 35.5826
 
 [node name="Player" type="KinematicBody2D"]
@@ -19,38 +40,42 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -6.04593 )
-scale = Vector2( 1, 1.2 )
-texture = ExtResource( 2 )
+[node name="player" type="AnimatedSprite" parent="."]
+position = Vector2( -3.508, 23.19 )
+scale = Vector2( 0.646564, 0.471239 )
+frames = SubResource( 1 )
+animation = "andar"
+frame = 7
+flip_h = true
 
 [node name="Corpo" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -113.892 )
+position = Vector2( 0, -101.475 )
 current = true
 
 [node name="identificaTeto" type="RayCast2D" parent="."]
-position = Vector2( 0.551758, -28.596 )
+visible = false
+position = Vector2( 0, -24 )
 scale = Vector2( 0.635434, 1.03478 )
 enabled = true
 cast_to = Vector2( 0, -10 )
 collision_mask = 3
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
+position = Vector2( 0.467216, 0.0821075 )
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )
+position = Vector2( -0.85, 0 )
+shape = SubResource( 3 )
 
 [node name="matarInimigo" type="Area2D" parent="."]
 visible = false
 
 [node name="alcance" type="CollisionShape2D" parent="matarInimigo"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="identificaTeto2" type="Area2D" parent="."]
 visible = false
@@ -59,7 +84,7 @@ collision_mask = 2
 
 [node name="alcance" type="CollisionShape2D" parent="identificaTeto2"]
 rotation = 3.13814
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="matarInimigo" to="." method="_on_matarInimigo_body_entered"]
 [connection signal="body_entered" from="identificaTeto2" to="." method="_on_identificaTeto2_body_entered"]

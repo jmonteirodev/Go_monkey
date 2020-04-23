@@ -17,11 +17,18 @@ func _ready():
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
-		player.x = VELOCIDADE
+		$player.play("andar");
+		player.x = 150
+		$player.flip_h = false
+		$player.position.x = -10
 	elif Input.is_action_pressed("ui_left"):
-		player.x = -VELOCIDADE
+		player.x = -150
+		$player.play("andar");
+		$player.flip_h = true
+		$player.position.x = 10
 	else:
 		player.x = 0
+		$player.play("parado");
 		
 	if($identificaTeto.is_colliding()):
 		var collider = $identificaTeto.get_collider()
@@ -33,13 +40,10 @@ func _physics_process(delta):
 				player.y = 0
 	else:
 		player.x = 0
+		player.y = -VELOCIDADE
 	if Input.is_action_just_pressed("atacar"):
 		contador_atacar = 0
 	
-	if(contador_atacar < 100):
-		$Sprite.scale.y = 1.1
-	else:
-		$Sprite.scale.y = 1.214
 	contador_atacar += 4
 	if(contador_subir < 100):
 		player.y = -VELOCIDADE
@@ -66,9 +70,12 @@ func _on_Area2D_body_entered(body):
 
 func _on_matarInimigo_body_entered(body):
 	var bodies = $matarInimigo.get_overlapping_bodies();
-	if(contador_atacar > 100):
-		returnPositionInitial()
-	elif(body.name.substr(0,7) == 'Inimigo'):
-		pontuacao += 50
-		body.queue_free()
+	
+	if(body.name.substr(0,7) == 'Inimigo'):
+		if(contador_atacar > 100):
+			print('a')
+			returnPositionInitial()
+		else:
+			pontuacao += 50
+			body.queue_free()
 
