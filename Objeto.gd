@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var objeto = Vector2()
-const GRAVIDADE = 2
+const GRAVIDADE = 4
 var initialPositionYObjeto = global_position.y - 600
 var jogo_iniciado = false
 # Called when the node enters the scene tree for the first time.

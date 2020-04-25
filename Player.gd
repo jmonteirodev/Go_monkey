@@ -7,8 +7,9 @@ var initialPosition
 var contador_atacar = 0
 var vidas
 var subir = true
-var contador_subir = 0
+var contador_subir = 100
 var pontuacao = 0
+var position_subir = 0
 
 func _ready():
 	player = Vector2()
@@ -16,43 +17,51 @@ func _ready():
 	initialPosition = global_position
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_right"):
-		$player.play("andar");
-		player.x = 150
-		$player.flip_h = false
-		$player.position.x = -10
-	elif Input.is_action_pressed("ui_left"):
-		player.x = -150
-		$player.play("andar");
-		$player.flip_h = true
-		$player.position.x = 10
-	else:
-		player.x = 0
-		$player.play("parado");
-		
+	player = move_and_slide(player, CHAO)		
 	if($identificaTeto.is_colliding()):
+		if Input.is_action_pressed("ui_right"):
+			$player.play("andar");
+			player.x = 150
+			$player.flip_h = false
+			$player.position.x = 25
+		elif Input.is_action_pressed("ui_left"):
+			player.x = -150
+			$player.play("andar");
+			$player.flip_h = true
+			$player.position.x = -25
+		else:
+			player.x = 0
+			player.y = 0;
+			$player.play("parado");
+			if($player.flip_h):
+				$player.position.x = -25
+			else:
+				$player.position.x = 25
 		var collider = $identificaTeto.get_collider()
 		if(collider.name == "chaoInimigo"):
-			if Input.is_action_just_pressed("ui_up"):
+			if Input.is_action_pressed("ui_up"):
+				$identificaTeto.enabled = false;
 				contador_subir = 0
 				pontuacao += 10
-			else:
-				player.y = 0
 	else:
+		if(position_subir != 0):
+			global_position.x = position_subir
 		player.x = 0
 		player.y = -VELOCIDADE
+		$player.position.x = 0
+		$player.play("subir");
 	if Input.is_action_just_pressed("atacar"):
 		contador_atacar = 0
 	
 	contador_atacar += 4
-	if(contador_subir < 100):
-		player.y = -VELOCIDADE
+	if(contador_subir > 150):
+		$identificaTeto.enabled = true;
 	contador_subir += 5
-	player = move_and_slide(player, CHAO)
 
 func returnPositionInitial():
 	global_position = initialPosition
-	vidas = vidas-1
+	contador_subir = 150
+	vidas = vidas - 1
 	
 	if(vidas < 1):
 		print("Derrota")
@@ -79,3 +88,12 @@ func _on_matarInimigo_body_entered(body):
 			pontuacao += 50
 			body.queue_free()
 
+
+
+func _on_Area2D_area_entered(area):
+	if(area.name != 'inicio' && area.name != 'Area2D'):
+		position_subir = get_parent().positions_vinha[int(area.name)]
+
+
+func _on_Area2D_area_exited(area):
+	position_subir = 0

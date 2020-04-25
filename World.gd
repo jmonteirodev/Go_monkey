@@ -2,6 +2,7 @@ extends Node2D
 var contadorObjetos
 var initialPositionYObjeto
 var initialPositionPlayer
+var positions_vinha = []
 var jogo_iniciado = false
 
 func _ready():
@@ -12,6 +13,13 @@ func _ready():
 	$player/Camera2D.set_limit(MARGIN_TOP, $"Cenário/min".position.y)
 	$player/Camera2D.set_limit(MARGIN_RIGHT, $"Cenário/max".position.x)
 	$player/Camera2D.set_limit(MARGIN_BOTTOM, $"Cenário/max".position.x)
+	positions_vinha.append($"Cenário/vinha/0/Position2D".global_position.x)
+	positions_vinha.append($"Cenário/vinha/1/Position2D".global_position.x)
+	positions_vinha.append($"Cenário/vinha/2/Position2D".global_position.x)
+	positions_vinha.append($"Cenário/vinha/3/Position2D".global_position.x)
+	positions_vinha.append($"Cenário/vinha/4/Position2D".global_position.x)
+	positions_vinha.append($"Cenário/vinha/5/Position2D".global_position.x)
+
 
 func _physics_process(delta):
 	jogo_iniciado = $"Cenário".game_init
