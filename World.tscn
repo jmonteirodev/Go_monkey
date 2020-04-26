@@ -33,6 +33,6 @@ position = Vector2( 724.415, -826.759 )
 collision_mask = 24
 
 [node name="Item" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1291.75, -413.934 )
+position = Vector2( 1178.71, -316.52 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]

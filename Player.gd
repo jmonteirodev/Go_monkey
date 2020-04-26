@@ -4,12 +4,13 @@ const VELOCIDADE = 250
 const GRAVIDADE = 1200
 var player
 var initialPosition
-var contador_atacar = 0
+var contador_atacar = 100
 var vidas
 var subir = true
 var contador_subir = 100
 var pontuacao = 0
 var position_subir = 0
+var fim_atacar = true;
 
 func _ready():
 	player = Vector2()
@@ -19,30 +20,45 @@ func _ready():
 func _physics_process(delta):
 	player = move_and_slide(player, CHAO)		
 	if($identificaTeto.is_colliding()):
-		if Input.is_action_pressed("ui_right"):
-			$player.play("andar");
-			player.x = 150
-			$player.flip_h = false
-			$player.position.x = 25
-		elif Input.is_action_pressed("ui_left"):
-			player.x = -150
-			$player.play("andar");
-			$player.flip_h = true
-			$player.position.x = -25
-		else:
-			player.x = 0
-			player.y = 0;
-			$player.play("parado");
-			if($player.flip_h):
+		if(fim_atacar):
+			$player.position.y = 10.057
+			if Input.is_action_pressed("atacar"):
+				 fim_atacar = false;
+			elif Input.is_action_pressed("ui_right"):
+				$player.play("andar");
+				player.x = 150
+				$player.flip_h = false
+				$player.position.x = 25
+			elif Input.is_action_pressed("ui_left"):
+				player.x = -150
+				$player.play("andar");
+				$player.flip_h = true
 				$player.position.x = -25
 			else:
-				$player.position.x = 25
-		var collider = $identificaTeto.get_collider()
-		if(collider.name == "chaoInimigo"):
-			if Input.is_action_pressed("ui_up"):
-				$identificaTeto.enabled = false;
-				contador_subir = 0
-				pontuacao += 10
+				player.x = 0
+				player.y = 0;
+				$player.play("parado");
+				if($player.flip_h):
+					$player.position.x = -25
+				else:
+					$player.position.x = 25
+			var collider = $identificaTeto.get_collider()
+			if(collider.name == "chaoInimigo"):
+				if Input.is_action_pressed("ui_up"):
+					$identificaTeto.enabled = false;
+					contador_subir = 0
+					pontuacao += 10
+		else:
+			$player.position.y = 8
+			$player.play("atacar")
+			if($player.frame == 6):
+				fim_atacar = true;
+			player.x = 0
+			player.y = 0;
+			if($player.flip_h):
+				$player.position.x = 4
+			else:
+				$player.position.x = -4
 	else:
 		if(position_subir != 0):
 			global_position.x = position_subir
@@ -50,10 +66,7 @@ func _physics_process(delta):
 		player.y = -VELOCIDADE
 		$player.position.x = 0
 		$player.play("subir");
-	if Input.is_action_just_pressed("atacar"):
-		contador_atacar = 0
 	
-	contador_atacar += 4
 	if(contador_subir > 150):
 		$identificaTeto.enabled = true;
 	contador_subir += 5

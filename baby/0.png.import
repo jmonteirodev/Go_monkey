@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0.png-bf6e59d980127cc95f21cef84bda9103.stex"
+path="res://.import/0.png-7057fcae4d20f71abd7d03a68a789421.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://squish/subir/0.png"
-dest_files=[ "res://.import/0.png-bf6e59d980127cc95f21cef84bda9103.stex" ]
+source_file="res://baby/0.png"
+dest_files=[ "res://.import/0.png-7057fcae4d20f71abd7d03a68a789421.stex" ]
 
 [params]
 
