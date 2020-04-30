@@ -1,0 +1,48 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Aguia.gd" type="Script" id=1]
+[ext_resource path="res://aguia/sem pedra/0.png" type="Texture" id=2]
+[ext_resource path="res://aguia/sem pedra/1.png" type="Texture" id=3]
+[ext_resource path="res://aguia/sem pedra/2.png" type="Texture" id=4]
+[ext_resource path="res://aguia/sem pedra/3.png" type="Texture" id=5]
+[ext_resource path="res://aguia/sem pedra/4.png" type="Texture" id=6]
+[ext_resource path="res://aguia/sem pedra/5.png" type="Texture" id=7]
+[ext_resource path="res://aguia/sem pedra/6.png" type="Texture" id=8]
+[ext_resource path="res://aguia/sem pedra/7.png" type="Texture" id=9]
+[ext_resource path="res://aguia/com pedra/0.png" type="Texture" id=10]
+[ext_resource path="res://aguia/com pedra/1.png" type="Texture" id=11]
+[ext_resource path="res://aguia/com pedra/2.png" type="Texture" id=12]
+[ext_resource path="res://aguia/com pedra/3.png" type="Texture" id=13]
+[ext_resource path="res://aguia/com pedra/4.png" type="Texture" id=14]
+[ext_resource path="res://aguia/com pedra/5.png" type="Texture" id=15]
+[ext_resource path="res://aguia/com pedra/6.png" type="Texture" id=16]
+[ext_resource path="res://aguia/com pedra/7.png" type="Texture" id=17]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 21.519
+height = 4.89301
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "sem pedra",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "com pedra",
+"speed": 15.0
+} ]
+
+[node name="Aguia" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "com pedra"
+frame = 4
+playing = true

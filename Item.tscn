@@ -7,10 +7,10 @@
 [ext_resource path="res://baby/2.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 57.1121, 53.9659 )
+extents = Vector2( 57.1121, 46.417 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 55.7268
+radius = 46.951
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -34,12 +34,12 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 2
 playing = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

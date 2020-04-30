@@ -10,6 +10,11 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
+func _on_fim_body_entered(body):
+	if body.name == "player" :
+		game_init = false
+
+
+func _on_inicio_body_entered(body):
 	if body.name == "player" :
 		game_init = true

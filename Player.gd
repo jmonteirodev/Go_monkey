@@ -26,11 +26,11 @@ func _physics_process(delta):
 				 fim_atacar = false;
 			elif Input.is_action_pressed("ui_right"):
 				$player.play("andar");
-				player.x = 150
+				player.x = 175
 				$player.flip_h = false
 				$player.position.x = 25
 			elif Input.is_action_pressed("ui_left"):
-				player.x = -150
+				player.x = -175
 				$player.play("andar");
 				$player.flip_h = true
 				$player.position.x = -25
@@ -74,6 +74,7 @@ func _physics_process(delta):
 func returnPositionInitial():
 	global_position = initialPosition
 	contador_subir = 150
+	
 	vidas = vidas - 1
 	
 	if(vidas < 1):
@@ -94,7 +95,7 @@ func _on_matarInimigo_body_entered(body):
 	var bodies = $matarInimigo.get_overlapping_bodies();
 	
 	if(body.name.substr(0,7) == 'Inimigo'):
-		if(contador_atacar > 100):
+		if(fim_atacar):
 			print('a')
 			returnPositionInitial()
 		else:

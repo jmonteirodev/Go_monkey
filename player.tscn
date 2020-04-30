@@ -5,20 +5,20 @@
 [ext_resource path="res://squish/subir/2.png" type="Texture" id=3]
 [ext_resource path="res://squish/subir/3.png" type="Texture" id=4]
 [ext_resource path="res://squish/subir/4.png" type="Texture" id=5]
-[ext_resource path="res://squish/atacar/0.png" type="Texture" id=6]
-[ext_resource path="res://squish/atacar/1.png" type="Texture" id=7]
-[ext_resource path="res://squish/atacar/2.png" type="Texture" id=8]
-[ext_resource path="res://squish/atacar/3.png" type="Texture" id=9]
-[ext_resource path="res://squish/atacar/4.png" type="Texture" id=10]
-[ext_resource path="res://squish/andar/1.png" type="Texture" id=11]
-[ext_resource path="res://squish/andar/2.png" type="Texture" id=12]
-[ext_resource path="res://squish/andar/3.png" type="Texture" id=13]
-[ext_resource path="res://squish/andar/4.png" type="Texture" id=14]
-[ext_resource path="res://squish/andar/5.png" type="Texture" id=15]
-[ext_resource path="res://squish/andar/6.png" type="Texture" id=16]
-[ext_resource path="res://squish/andar/7.png" type="Texture" id=17]
-[ext_resource path="res://squish/andar/8.png" type="Texture" id=18]
-[ext_resource path="res://squish/andar/9.png" type="Texture" id=19]
+[ext_resource path="res://squish/andar/1.png" type="Texture" id=6]
+[ext_resource path="res://squish/andar/2.png" type="Texture" id=7]
+[ext_resource path="res://squish/andar/3.png" type="Texture" id=8]
+[ext_resource path="res://squish/andar/4.png" type="Texture" id=9]
+[ext_resource path="res://squish/andar/5.png" type="Texture" id=10]
+[ext_resource path="res://squish/andar/6.png" type="Texture" id=11]
+[ext_resource path="res://squish/andar/7.png" type="Texture" id=12]
+[ext_resource path="res://squish/andar/8.png" type="Texture" id=13]
+[ext_resource path="res://squish/andar/9.png" type="Texture" id=14]
+[ext_resource path="res://squish/atacar/0.png" type="Texture" id=15]
+[ext_resource path="res://squish/atacar/1.png" type="Texture" id=16]
+[ext_resource path="res://squish/atacar/2.png" type="Texture" id=17]
+[ext_resource path="res://squish/atacar/3.png" type="Texture" id=18]
+[ext_resource path="res://squish/atacar/4.png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,20 +27,20 @@ animations = [ {
 "name": "subir",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "atacar",
-"speed": 10.0
+"name": "andar",
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "parado",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "andar",
-"speed": 12.0
+"name": "atacar",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -61,8 +61,7 @@ script = ExtResource( 1 )
 position = Vector2( -4, 10.057 )
 scale = Vector2( 0.508353, 0.370506 )
 frames = SubResource( 1 )
-animation = "atacar"
-frame = 2
+animation = "subir"
 playing = true
 
 [node name="Corpo" type="CollisionShape2D" parent="."]
