@@ -1,68 +1,82 @@
 extends Node2D
+var posicao_inicial
+
 var contadorObjeto
 var contadorAguia
-var initialPositionYObjeto
-var initialPositionPlayer
-var positions_vinha = []
-var jogo_iniciado = false
+var positions_cipos = []
+var jogo_iniciado
 var frame_atual = 0
+var jogando
+
 func _ready():
+	posicao_inicial = $inicio.global_position
+	jogo_iniciado = false
+	set_limites_camera()
+	preencher_positions_cipos()
+	iniciar_jogo()
+	jogando = false
+	
 	contadorObjeto = 0
 	contadorAguia = 0
-	initialPositionPlayer = $player.global_position
-	initialPositionYObjeto = $Objetos/Objeto.global_position.y
+
+
+func _physics_process(delta):
+	if(jogando):
+		jogo_iniciado = $"Cenário".game_init
+		if($HUD.reiniciar):
+			$HUD.reiniciar()
+			reiniciar()
+		if($player.item_capturado):
+			$HUD.vitoria()
+		if(str($player.vidas) != $HUD/CanvasLayer/vidas.text):
+			dano_player()
+		$HUD/CanvasLayer/pontuacao.text = str($player.pontuacao)
+		if (jogo_iniciado == true) :
+			contadorAguia += 1
+			$Aguia.distanciar_do_player($player.global_position, -380)
+			if($Aguia.atacando == true):
+				if($Aguia.ultrapassou($"Cenário/max".position.x + 300)):
+					$Aguia.atacando = false
+					contadorAguia = 0
+			if(contadorAguia == 500):
+				ataque_aguia()
+	
+func ataque_aguia():
+	$Aguia.atacar($player, $"Cenário/min".position.x - 300)
+		
+func iniciar_jogo():
+	$player.voltar_inicio(posicao_inicial)
+	$player.vidas = 1
+func reiniciar():
+	$player.item_capturado = false
+	$player.vidas = 3
+	$Inimigos/Inimigo1.sumir = false
+	$Item.sumir = false
+	for node in $Inimigos.get_children():
+        node.sumir = false
+func dano_player():
+	$HUD.atualiza_vidas($player.vidas)
+	$player.voltar_inicio(posicao_inicial)
+	$"Cenário".game_init = false
+	$Aguia.visible = false
+	$Objeto.visible = false
+	$Objeto.global_position.x = $"Cenário/min".position.x - 300
+	$Aguia.global_position.x = $"Cenário/min".position.x - 300
+	contadorAguia = 0
+	
+func set_limites_camera():
 	$player/Camera2D.set_limit(MARGIN_LEFT, $"Cenário/min".position.x)
 	$player/Camera2D.set_limit(MARGIN_TOP, $"Cenário/min".position.y)
 	$player/Camera2D.set_limit(MARGIN_RIGHT, $"Cenário/max".position.x)
 	$player/Camera2D.set_limit(MARGIN_BOTTOM, $"Cenário/max".position.x)
-	positions_vinha.append($"Cenário/vinha/0/Position2D".global_position.x)
-	positions_vinha.append($"Cenário/vinha/1/Position2D".global_position.x)
-	positions_vinha.append($"Cenário/vinha/2/Position2D".global_position.x)
-	positions_vinha.append($"Cenário/vinha/3/Position2D".global_position.x)
-	positions_vinha.append($"Cenário/vinha/4/Position2D".global_position.x)
-	positions_vinha.append($"Cenário/vinha/5/Position2D".global_position.x)
 
+func preencher_positions_cipos():
+	positions_cipos.append($"Cenário/cipo/0/Position2D".global_position.x)
+	positions_cipos.append($"Cenário/cipo/1/Position2D".global_position.x)
+	positions_cipos.append($"Cenário/cipo/2/Position2D".global_position.x)
+	positions_cipos.append($"Cenário/cipo/3/Position2D".global_position.x)
+	positions_cipos.append($"Cenário/cipo/4/Position2D".global_position.x)
+	positions_cipos.append($"Cenário/cipo/5/Position2D".global_position.x)
 
-func _physics_process(delta):
-	jogo_iniciado = $"Cenário".game_init
-	if($player != null):
-		$Aguia.global_position.y = $player.global_position.y - 380
-		if($player.vidas > 0):
-			if(str($player.vidas) != $HUD/CanvasLayer/vidas.text):
-				jogo_iniciado = false
-				$"Cenário".game_init = false
-				$Aguia.visible = false
-				$Objetos/Objeto.visible = false
-				$Objetos/Objeto.pedra_jogada = false
-				$Objetos/Objeto.global_position.x = $"Cenário/max".position.x + 300
-				$Aguia.global_position.x = $"Cenário/min".position.x - 300
-				contadorAguia = 0
-		$HUD/CanvasLayer/pontuacao.text = str($player.pontuacao)
-		$HUD/CanvasLayer/vidas.text = str($player.vidas)
-	if (jogo_iniciado == true) :
-		contadorAguia += 1
-		if(contadorAguia >= 300):
-			lancarObjeto()
-	
-func lancarObjeto():
-	$Aguia.visible = true
-	$Objetos/Objeto.visible = true
-	if($Aguia.global_position.x >= $"Cenário/max".position.x + 300):
-		$Aguia.global_position.x = $"Cenário/min".position.x - 300
-		contadorAguia = 0
-		$Objetos/Objeto.pedra_jogada = false
-		$Objetos/Objeto.visible = false
-	$Aguia.global_position.x += 5
-	if($player != null && $Aguia.global_position.x >= $player.global_position.x):
-		$Aguia/AnimatedSprite.play("sem pedra")
-		if($Objetos/Objeto.pedra_jogada == false):
-			$Aguia/AnimatedSprite.frame = frame_atual
-			$Aguia/AnimatedSprite.play("sem pedra")
-			$Objetos/Objeto.jogo_iniciado = jogo_iniciado
-			$Objetos/Objeto.pedra_jogada = true
-			$Objetos/Objeto.visible = true
-			$Objetos/Objeto.global_position.x = $player.global_position.x
-			$Objetos/Objeto.global_position.y = $player.global_position.y - 250
-	else:
-		$Aguia/AnimatedSprite.play("com pedra")
-		frame_atual = $Aguia/AnimatedSprite.frame
+func lancar_objeto():
+	$Objeto.lancar_objeto($player.global_position, -250)

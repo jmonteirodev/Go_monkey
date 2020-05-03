@@ -5,11 +5,6 @@ var game_init
 func _ready():
 	game_init = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_fim_body_entered(body):
 	if body.name == "player" :
 		game_init = false
