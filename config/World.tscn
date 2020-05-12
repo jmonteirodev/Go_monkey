@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cenário.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Inimigo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objeto.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Item.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Aguia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pause.png" type="Texture" id=9]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="player" parent="." groups=[
+"Jogador",
+] instance=ExtResource( 3 )]
+position = Vector2( 179.117, -2.93634 )
+collision_mask = 25
+
+[node name="Cenário" parent="." instance=ExtResource( 4 )]
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="Inimigo1" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 740.74, 605.684 )
+
+[node name="Inimigo2" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 1171.47, 428.117 )
+
+[node name="Inimigo3" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 844.467, 231.21 )
+
+[node name="Inimigo4" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 281.878, 417.568 )
+
+[node name="Inimigo5" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 297.462, 43.5473 )
+
+[node name="Inimigo6" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 983.166, 43.5473 )
+
+[node name="Inimigo7" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 722.131, -155.151 )
+
+[node name="Inimigo8" parent="Inimigos" instance=ExtResource( 5 )]
+position = Vector2( 519.536, -353.85 )
+
+[node name="Objeto" parent="." groups=[
+"Objetos",
+] instance=ExtResource( 6 )]
+position = Vector2( 726.566, -849.23 )
+collision_mask = 24
+
+[node name="Item" parent="." groups=[
+"Item",
+] instance=ExtResource( 7 )]
+position = Vector2( 1192.28, -517.923 )
+
+[node name="Aguia" parent="." instance=ExtResource( 8 )]
+position = Vector2( -253.942, 790.025 )
+
+[node name="inicio" type="Position2D" parent="."]
+position = Vector2( 608.971, 1442.99 )
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Pause"]
+layer = 100
+
+[node name="Button" type="Button" parent="Pause/ParallaxBackground"]
+margin_left = 19.4312
+margin_top = 19.0
+margin_right = 80.4312
+margin_bottom = 86.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Pause/ParallaxBackground/Button"]
+position = Vector2( 30.1789, 33.683 )
+scale = Vector2( 0.437989, 0.437989 )
+texture = ExtResource( 9 )
+[connection signal="pressed" from="Pause/ParallaxBackground/Button" to="." method="_on_Button_pressed"]

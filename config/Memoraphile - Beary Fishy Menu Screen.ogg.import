@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Memoraphile - Beary Fishy Menu Screen.ogg-f1a7c0008f5c87b6738425790331c316.oggstr"
+
+[deps]
+
+source_file="res://Memoraphile - Beary Fishy Menu Screen.ogg"
+dest_files=[ "res://.import/Memoraphile - Beary Fishy Menu Screen.ogg-f1a7c0008f5c87b6738425790331c316.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,361 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Cenário.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://cenario/cipos/cipo0.png" type="Texture" id=3]
+[ext_resource path="res://cenario/cipos/cipo1.png" type="Texture" id=4]
+[ext_resource path="res://cenario/cipos/cipo2.png" type="Texture" id=5]
+[ext_resource path="res://cenario/cipos/cipo3.png" type="Texture" id=6]
+[ext_resource path="res://cenario/cipos/cipo4.png" type="Texture" id=7]
+[ext_resource path="res://cenario/troncos/tronco4.png" type="Texture" id=8]
+[ext_resource path="res://cenario/troncos/tronco1.png" type="Texture" id=9]
+[ext_resource path="res://cenario/troncos/tronco2.png" type="Texture" id=10]
+[ext_resource path="res://cenario/troncos/tronco3.png" type="Texture" id=11]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "icon.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/navigation = SubResource( 1 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=4]
+0/name = "cipo0.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "cipo1.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "cipo2.png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "cipo3.png 3"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "cipo4.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24.3669, 71.256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "tronco4.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=11]
+0/name = "tronco1.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 8 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tronco2.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 9 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "tronco3.png 2"
+2/texture = ExtResource( 11 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 10 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[sub_resource type="SegmentShape2D" id=12]
+a = Vector2( 1752.13, 7.56885 )
+
+[node name="Cenário" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="parede" type="TileMap" parent="."]
+visible = false
+modulate = Color( 0.827451, 1, 0, 1 )
+tile_set = SubResource( 3 )
+cell_quadrant_size = 1
+format = 1
+tile_data = PoolIntArray( -655360, 0, 0, -655339, 0, 0, -589824, 0, 0, -589820, 0, 0, -589816, 0, 0, -589803, 0, 0, -524288, 0, 0, -524284, 0, 0, -524280, 0, 0, -524267, 0, 0, -458752, 0, 0, -458748, 0, 0, -458744, 0, 0, -458731, 0, 0, -393216, 0, 0, -393200, 0, 0, -393195, 0, 0, -327680, 0, 0, -327664, 0, 0, -327659, 0, 0, -262144, 0, 0, -262128, 0, 0, -262123, 0, 0, -196608, 0, 0, -196605, 0, 0, -196587, 0, 0, -131072, 0, 0, -131069, 0, 0, -131051, 0, 0, -65536, 0, 0, -65533, 0, 0, -65515, 0, 0, 0, 0, 0, 18, 0, 0, 21, 0, 0, 65536, 0, 0, 65554, 0, 0, 65557, 0, 0, 131072, 0, 0, 131090, 0, 0, 131093, 0, 0, 196608, 0, 0, 196612, 0, 0, 196629, 0, 0, 262144, 0, 0, 262148, 0, 0, 262165, 0, 0, 327680, 0, 0, 327684, 0, 0, 327701, 0, 0, 393216, 0, 0, 393226, 0, 0, 393230, 0, 0, 393237, 0, 0, 458752, 0, 0, 458762, 0, 0, 458766, 0, 0, 458773, 0, 0, 524288, 0, 0, 524298, 0, 0, 524302, 0, 0, 524309, 0, 0, 589824, 0, 0, 589828, 0, 0, 589832, 0, 0, 589845, 0, 0, 655360, 0, 0, 655364, 0, 0, 655368, 0, 0, 655381, 0, 0, 720896, 0, 0, 720900, 0, 0, 720904, 0, 0, 720917, 0, 0, 786432, 0, 0, 786453, 0, 0, 851968, 0, 0, 851989, 0, 0, 917504, 0, 0, 917525, 0, 0 )
+
+[node name="cipo" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_quadrant_size = 1
+collision_layer = 3
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -1048576, 0, 0, -1048567, 0, 0, -1048564, 0, 0, -1048555, 0, 0, -983040, 0, 0, -983031, 0, 0, -983028, 0, 0, -983019, 0, 0, -917504, 0, 0, -917495, 0, 0, -917492, 0, 0, -917483, 0, 0, -851968, 0, 0, -851959, 0, 0, -851956, 0, 0, -851947, 0, 0, -786432, 0, 0, -786423, 0, 0, -786420, 0, 0, -786411, 0, 0, -720896, 0, 0, -720887, 0, 0, -720884, 0, 0, -720875, 0, 0, -655360, 536870913, 0, -655359, 2, 0, -655358, 2, 0, -655357, 4, 0, -655351, 0, 0, -655348, 0, 0, -655345, 536870916, 0, -655344, 2, 0, -655343, 2, 0, -655342, 2, 0, -655341, 2, 0, -655340, 2, 0, -655339, 1, 0, -589821, 536870912, 0, -589815, 0, 0, -589812, 0, 0, -589809, 0, 0, -524285, 536870912, 0, -524279, 0, 0, -524276, 0, 0, -524273, 0, 0, -458749, 536870912, 0, -458743, 0, 0, -458740, 0, 0, -458737, 0, 0, -393213, 536870912, 0, -393207, 0, 0, -393204, 0, 0, -393201, 0, 0, -327677, 536870912, 0, -327671, 0, 0, -327668, 0, 0, -327665, 0, 0, -262141, 536870913, 0, -262140, 2, 0, -262139, 2, 0, -262138, 4, 0, -262135, 3, 0, -262132, 0, 0, -262129, 536870915, 0, -196602, 536870912, 0, -196596, 0, 0, -131066, 536870912, 0, -131060, 0, 0, -65530, 536870913, 0, -65529, 2, 0, -65528, 2, 0, -65527, 4, 0, -65524, 536870913, 0, -65523, 2, 0, -65522, 2, 0, -65521, 4, 0, 9, 536870912, 0, 15, 536870912, 0, 65545, 536870912, 0, 65551, 536870912, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 4, 0, 131081, 536870912, 0, 131084, 536870916, 0, 131085, 2, 0, 131086, 2, 0, 131087, 1, 0, 196614, 536870912, 0, 196617, 536870912, 0, 196620, 0, 0, 262150, 536870912, 0, 262153, 536870912, 0, 262156, 0, 0, 327686, 536870912, 0, 327689, 536870912, 0, 327692, 3, 0, 327695, 536870916, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 393222, 536870912, 0, 393225, 536870912, 0, 393231, 0, 0, 458758, 536870912, 0, 458761, 536870912, 0, 458767, 0, 0, 524291, 536870916, 0, 524292, 2, 0, 524293, 2, 0, 524294, 1, 0, 524297, 536870915, 0, 524303, 0, 0, 589827, 0, 0, 589839, 0, 0, 655363, 0, 0, 655375, 0, 0, 720899, 0, 0, 720905, 536870916, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 1, 0, 720914, 536870916, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 786435, 0, 0, 786441, 0, 0, 786450, 0, 0, 851971, 0, 0, 851977, 0, 0, 851986, 0, 0, 917507, 0, 0, 917513, 0, 0, 917522, 0, 0, 983043, 0, 0, 983049, 0, 0, 983058, 0, 0, 1048579, 0, 0, 1048585, 0, 0, 1048594, 0, 0, 1114115, 0, 0, 1114121, 0, 0, 1114130, 0, 0, 1179651, 0, 0, 1179657, 0, 0, 1179666, 0, 0, 1245187, 0, 0, 1245193, 0, 0, 1245202, 0, 0, 1310723, 0, 0, 1310729, 0, 0, 1310738, 0, 0, 1376259, 0, 0, 1376265, 0, 0, 1376274, 0, 0, 1441795, 0, 0, 1441801, 0, 0, 1441810, 0, 0, 1507331, 3, 0, 1507337, 3, 0, 1507346, 536870915, 0 )
+
+[node name="0" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 223.871, 486.395 )
+
+[node name="Position2D" type="Position2D" parent="cipo/0"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/0"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="1" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 416.232, 477.169 )
+
+[node name="Position2D" type="Position2D" parent="cipo/1"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/1"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="2" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 607.564, 481.952 )
+
+[node name="Position2D" type="Position2D" parent="cipo/2"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/2"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="3" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 798.792, 481.952 )
+
+[node name="Position2D" type="Position2D" parent="cipo/3"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/3"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="4" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 992.679, 485.305 )
+
+[node name="Position2D" type="Position2D" parent="cipo/4"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/4"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="5" type="Area2D" parent="cipo" groups=[
+"subida",
+]]
+position = Vector2( 1184.51, 475.578 )
+
+[node name="Position2D" type="Position2D" parent="cipo/5"]
+position = Vector2( 0, -853.329 )
+scale = Vector2( 1.32976, 14.0437 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cipo/5"]
+scale = Vector2( 1.32976, 14.0437 )
+shape = SubResource( 5 )
+
+[node name="troco_subir" type="TileMap" parent="."]
+tile_set = SubResource( 7 )
+cell_quadrant_size = 1
+collision_layer = 2
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( -720896, 0, 0, -720875, 536870912, 0, -524285, 536870912, 0, -524279, 0, 0, -524276, 536870912, 0, -524273, 0, 0, -327677, 0, 0, -327671, 536870912, 0, -327668, 0, 0, -327665, 536870912, 0, -131066, 536870912, 0, -131060, 0, 0, 65545, 0, 0, 65551, 536870912, 0, 262150, 0, 0, 262153, 536870912, 0, 262156, 0, 0, 458758, 0, 0, 458761, 536870912, 0, 458767, 0, 0, 655363, 0, 0, 655375, 536870912, 0, 851971, 0, 0, 851977, 0, 0, 851986, 536870912, 0 )
+
+[node name="tronco" type="TileMap" parent="."]
+tile_set = SubResource( 11 )
+cell_quadrant_size = 1
+format = 1
+tile_data = PoolIntArray( -720895, 536870913, 0, -720894, 536870913, 0, -720893, 536870913, 0, -720892, 536870912, 0, -720891, 536870912, 0, -720890, 536870912, 0, -720889, 536870912, 0, -720888, 536870912, 0, -720887, 0, 0, -720886, 536870912, 0, -720885, 536870912, 0, -720884, 0, 0, -720883, 536870912, 0, -720882, 536870912, 0, -720881, 1, 0, -720880, 536870913, 0, -720879, 536870913, 0, -720878, 536870913, 0, -720877, 536870913, 0, -720876, 536870913, 0, -524288, 536870912, 0, -524287, 536870912, 0, -524286, 536870912, 0, -524284, 2, 0, -524280, 536870914, 0, -524278, 536870912, 0, -524277, 536870912, 0, -524275, 536870912, 0, -524274, 536870912, 0, -524272, 536870912, 0, -524271, 536870912, 0, -524270, 536870912, 0, -524269, 536870912, 0, -524268, 536870912, 0, -524267, 536870912, 0, -327680, 536870912, 0, -327679, 536870912, 0, -327678, 536870912, 0, -327676, 536870913, 0, -327675, 536870913, 0, -327674, 536870913, 0, -327673, 536870912, 0, -327672, 536870912, 0, -327670, 536870912, 0, -327669, 536870912, 0, -327667, 536870912, 0, -327666, 536870912, 0, -327664, 2, 0, -131069, 536870914, 0, -131068, 536870912, 0, -131067, 536870912, 0, -131065, 536870913, 0, -131064, 536870913, 0, -131063, 536870913, 0, -131062, 536870912, 0, -131061, 536870912, 0, -131059, 536870913, 0, -131058, 536870913, 0, -131057, 536870913, 0, -131056, 536870912, 0, -131055, 536870912, 0, -131054, 536870912, 0, -131053, 536870912, 0, -131052, 536870912, 0, -131051, 536870912, 0, 65536, 536870913, 0, 65537, 536870913, 0, 65538, 536870913, 0, 65539, 536870913, 0, 65540, 536870913, 0, 65541, 536870913, 0, 65542, 536870913, 0, 65543, 536870912, 0, 65544, 536870912, 0, 65546, 536870912, 0, 65547, 536870912, 0, 65548, 1, 0, 65549, 536870913, 0, 65550, 536870913, 0, 65552, 536870912, 0, 65553, 536870912, 0, 65554, 2, 0, 262148, 536870914, 0, 262149, 536870912, 0, 262151, 536870912, 0, 262152, 536870912, 0, 262154, 536870912, 0, 262155, 536870912, 0, 262157, 536870912, 0, 262158, 536870912, 0, 262159, 1, 0, 262160, 536870913, 0, 262161, 536870913, 0, 262162, 536870913, 0, 262163, 536870913, 0, 262164, 536870913, 0, 262165, 536870913, 0, 458752, 536870912, 0, 458753, 536870912, 0, 458754, 536870912, 0, 458755, 1, 0, 458756, 536870913, 0, 458757, 536870913, 0, 458759, 536870912, 0, 458760, 536870912, 0, 458762, 2, 0, 458766, 536870914, 0, 458768, 536870912, 0, 458769, 536870912, 0, 458770, 536870912, 0, 458771, 536870912, 0, 458772, 536870912, 0, 458773, 536870912, 0, 655360, 536870912, 0, 655361, 536870912, 0, 655362, 536870912, 0, 655364, 2, 0, 655368, 536870914, 0, 655369, 1, 0, 655370, 536870913, 0, 655371, 536870913, 0, 655372, 536870913, 0, 655373, 536870913, 0, 655374, 536870913, 0, 655376, 536870912, 0, 655377, 536870912, 0, 655378, 1, 0, 655379, 536870913, 0, 655380, 536870913, 0, 655381, 536870913, 0, 851968, 536870912, 0, 851969, 536870912, 0, 851970, 536870912, 0, 851972, 536870912, 0, 851973, 536870912, 0, 851974, 536870912, 0, 851975, 536870912, 0, 851976, 536870912, 0, 851978, 536870912, 0, 851979, 536870912, 0, 851980, 536870912, 0, 851981, 536870912, 0, 851982, 536870912, 0, 851983, 536870912, 0, 851984, 536870912, 0, 851985, 536870912, 0, 851987, 536870912, 0, 851988, 536870912, 0, 851989, 536870912, 0 )
+
+[node name="inicio" type="Area2D" parent="."]
+position = Vector2( 0, 661.408 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inicio"]
+position = Vector2( 0, -6 )
+shape = SubResource( 12 )
+
+[node name="fim" type="Area2D" parent="."]
+position = Vector2( -119.503, -467.83 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fim"]
+position = Vector2( 0, -6 )
+shape = SubResource( 12 )
+
+[node name="min" type="Position2D" parent="."]
+position = Vector2( 25.175, -900.806 )
+
+[node name="max" type="Position2D" parent="."]
+position = Vector2( 1384.43, 1008.89 )
+[connection signal="body_entered" from="inicio" to="." method="_on_inicio_body_entered"]
+[connection signal="body_entered" from="fim" to="." method="_on_fim_body_entered"]
