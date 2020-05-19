@@ -322,6 +322,7 @@ rect_pivot_offset = Vector2( 452.584, 138.841 )
 flat = true
 
 [node name="comoJogar" type="AnimatedSprite" parent="CanvasLayer"]
+visible = false
 position = Vector2( 678.141, 385.415 )
 scale = Vector2( 1.14378, 1.214 )
 frames = SubResource( 4 )
