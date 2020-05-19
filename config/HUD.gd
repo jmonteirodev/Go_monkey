@@ -96,3 +96,7 @@ func _on_recomecar_pressed():
 	$clique.play()
 	reiniciar = true
 	get_parent().jogando = true
+
+
+func _on_Sair_pressed():
+	get_parent().get_tree().quit()

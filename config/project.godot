@@ -23,6 +23,7 @@ config/icon="res://squish/vida.png"
 
 window/size/width=1350
 window/size/height=770
+window/size/resizable=false
 window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
