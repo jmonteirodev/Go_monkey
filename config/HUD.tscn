@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://cenario/fundo.png" type="Texture" id=2]
@@ -70,6 +70,8 @@
 [ext_resource path="res://Pauze Game Arcade.wav" type="AudioStream" id=68]
 [ext_resource path="res://Interface Soft Button.wav" type="AudioStream" id=69]
 [ext_resource path="res://telas/pause.png" type="Texture" id=70]
+[ext_resource path="res://cenario/troncos/tronco1.png" type="Texture" id=71]
+[ext_resource path="res://cenario/cipos/cipo0.png" type="Texture" id=72]
 
 [sub_resource type="DynamicFont" id=1]
 size = 66
@@ -320,8 +322,7 @@ rect_pivot_offset = Vector2( 452.584, 138.841 )
 flat = true
 
 [node name="comoJogar" type="AnimatedSprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 679.858, 384.513 )
+position = Vector2( 678.141, 385.415 )
 scale = Vector2( 1.14378, 1.214 )
 frames = SubResource( 4 )
 
@@ -334,57 +335,59 @@ rect_pivot_offset = Vector2( 452.584, 138.841 )
 flat = true
 
 [node name="andar_esquerda" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( -404.577, 76.9008 )
+position = Vector2( -387.93, 40.3054 )
 scale = Vector2( 0.289705, 0.289705 )
 frames = SubResource( 5 )
 frame = 4
 flip_h = true
 
 [node name="andar_direita" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( -146.587, 76.901 )
+position = Vector2( -174.331, 38.9985 )
 scale = Vector2( 0.289705, 0.289705 )
 frames = SubResource( 5 )
 frame = 3
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/comoJogar/andar_direita"]
-position = Vector2( -456.656, -170.761 )
+position = Vector2( -408.37, -170.761 )
 scale = Vector2( 20.6427, 1 )
+texture = ExtResource( 71 )
 
 [node name="atacar" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( -169.904, 269.964 )
+position = Vector2( 335.098, 35.6046 )
 scale = Vector2( 0.299096, 0.299096 )
 frames = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/comoJogar/atacar"]
 position = Vector2( 1.01398, -169.478 )
 scale = Vector2( 8.96534, 0.968603 )
+texture = ExtResource( 71 )
 
 [node name="Derrotar_lagarto" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( 419.822, 215.361 )
+position = Vector2( 443.128, 233.941 )
 scale = Vector2( 0.393186, 0.393186 )
 frames = SubResource( 7 )
 frame = 3
 
 [node name="Salve_Bebe" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( 109.625, 195.304 )
+position = Vector2( 138.309, 232.464 )
 scale = Vector2( 0.393186, 0.393186 )
 frames = SubResource( 8 )
 frame = 1
 
 [node name="Escale" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( 115.452, 1.75952 )
+position = Vector2( -416.41, 225.834 )
 scale = Vector2( 0.316939, 0.316939 )
 frames = SubResource( 9 )
 frame = 2
 
 [node name="EvitePedras" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( 423.935, 1.75952 )
+position = Vector2( -145.632, 215.783 )
 scale = Vector2( 0.316939, 0.316939 )
 frames = SubResource( 10 )
 frame = 10
 
 [node name="subir" type="AnimatedSprite" parent="CanvasLayer/comoJogar"]
-position = Vector2( -391, 263.5 )
+position = Vector2( 114.606, 36.4503 )
 scale = Vector2( 0.291856, 0.291856 )
 frames = SubResource( 11 )
 frame = 2
@@ -393,6 +396,7 @@ flip_h = true
 [node name="Sprite" type="Sprite" parent="CanvasLayer/comoJogar/subir"]
 position = Vector2( 153.616, 215.432 )
 scale = Vector2( 1.82488, 5.97268 )
+texture = ExtResource( 72 )
 offset = Vector2( -85.6074, -35.0607 )
 
 [node name="creditos" type="AnimatedSprite" parent="CanvasLayer"]
